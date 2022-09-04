@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a6c6a203-b91a-4edd-bedb-5302bef52057": {
+      "ProjectGuid": "a6c6a203-b91a-4edd-bedb-5302bef52057",
+      "DisplayName": "WebApplication2022_Core6_WebApi_JWT",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "其他檔案",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

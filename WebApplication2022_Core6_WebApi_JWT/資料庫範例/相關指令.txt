@@ -1,0 +1,39 @@
+*** 連結資料庫會用到 ***
+
+==================================================
+
+(1) 務必先透過NuGet安裝兩個套件
+-- 「Microsoft.EntityFrameworkCore.Tools」套件
+-- 「Microsoft.EntityFrameworkCore.SqlServer」套件
+
+不然會出現下列錯誤 --
+
+Scaffold-DbContext : 無法辨識 'Scaffold-DbContext' 詞彙是否為 Cmdlet、函數、指令檔或可執行程式的名稱。請檢查名稱拼字是否正確，如果包含路徑的話，請確認路徑是否正確，然後再試一次。
+位於 線路:1 字元:1
++ Scaffold-DbContext 'Data Source=.\SqlExpress;Initial Catalog=MVC_User ...
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Scaffold-DbContext:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+(2)   上方的功能列「工具」 =>「Nuget套件管理器」=>「套件管理器主控台」
+請輸入這段指令（請依照您的情況，自己修改）
+
+Scaffold-DbContext 'Server=.\sqlexpress;Database=改成資料庫的名稱;Trusted_Connection=True;MultipleActiveResultSets=true' Microsoft.EntityFrameworkCore.SqlServer -OutputDir 改成您的目錄名稱
+
+註解：-OutputDir Models   最後那句話的意思是：產生的檔案要放入  /Models目錄底下
+           不然的話，通通放在專案的「根目錄」底下，會很亂。
+
+********************************
+***** 幫您寫好這段指令如下 *****
+********************************
+
+Scaffold-DbContext 'Server=.\sqlexpress;Database=MVC_UserDB;Trusted_Connection=True;MultipleActiveResultSets=true' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models_MVC_UserDB
+
+** 資料庫名稱 MVC_UserDB
+** 產生的檔案要放入  /Models_MVC_UserDB目錄底下
+
+Scaffold-DbContext 'Server=.\sqlexpress;Database=MVC_UserLogin;Trusted_Connection=True;MultipleActiveResultSets=true' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models_MVC_UserLogin
+
+** 資料庫名稱 MVC_UserLogin 
+** 產生的檔案要放入  /Models_MVC_UserLogin目錄底下
